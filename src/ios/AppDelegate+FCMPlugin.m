@@ -153,7 +153,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 {
     // Short-circuit when actually running iOS 10+, let notification centre methods handle the notification.
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_9_x_Max) {
-        return;
+       // return;
     }
     
     NSLog(@"Message ID: %@", userInfo[@"gcm.message_id"]);
@@ -194,7 +194,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     // Short-circuit when actually running iOS 10+, let notification centre methods handle the notification.
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_9_x_Max) {
-        return;
+       // return;
     }
     
     // If you are receiving a notification message while your app is in the background,
@@ -253,10 +253,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
     // Disconnect previous FCM connection if it exists.
     [[FIRMessaging messaging] setShouldEstablishDirectChannel:NO];
     
-    [[FIRMessaging messaging] setShouldEstablishDirectChannel:YES];
+   // [[FIRMessaging messaging] setShouldEstablishDirectChannel:YES];
     
-    [[FIRMessaging messaging] subscribeToTopic:@"ios"];
-    [[FIRMessaging messaging] subscribeToTopic:@"all"];
+  //  [[FIRMessaging messaging] subscribeToTopic:@"ios"];
+  //  [[FIRMessaging messaging] subscribeToTopic:@"all"];
 }
 // [END connect_to_fcm]
 
